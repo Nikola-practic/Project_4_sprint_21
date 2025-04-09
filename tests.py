@@ -2,7 +2,6 @@ from main import BooksCollector
 import pytest
 import random
 
-
 class TestBooksCollector:
 
     # 1. Тестируем добавление новых книг.
@@ -59,7 +58,7 @@ class TestBooksCollector:
         random_books = random.choice(books)
         assert random_books in collector.get_books_genre()
 
-        # 8. Тестируем, что в списке с книгами есть только книги с рейтингом для детей.
+    # 8. Тестируем, что в списке с книгами есть только книги с рейтингом для детей.
 
     def test_get_books_for_children_genre_children(self):
         collector = BooksCollector()
@@ -72,7 +71,7 @@ class TestBooksCollector:
         for rating in collector.genre_age_rating:
             assert rating not in collector.get_books_for_children()
 
-    # 9. Тестируем, что книга добавленая в Избранное, есть в Избранном.
+    # 9. Тестируем, что книга добавленная в Избранное, есть в Избранном.
     def test_add_book_in_favorites_when_books_in_list(self):
         collector = BooksCollector()
         books = ['Тринадцать этажей', 'Цветик-семицветик', 'Человек-невидимка']
@@ -90,8 +89,7 @@ class TestBooksCollector:
             collector.add_book_in_favorites(name)
         assert not collector.add_book_in_favorites('Что делать, если ваш кот хочет вас убить')
 
-        # 11. Тестируем удаление книги из Избранного.
-
+    # 11. Тестируем удаление книги из Избранного.
     def test_delete_book_from_favorites_list(self):
         collector = BooksCollector()
         books = ['Последнее дело Холмса', 'Цветик-семицветик', 'Гордость и предубеждение и зомби']
